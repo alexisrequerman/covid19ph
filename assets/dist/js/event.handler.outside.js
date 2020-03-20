@@ -2,7 +2,9 @@ $(function () {
     //
     show_covid_outside();
     //
-    $('#tbl_covid_cases_outside').DataTable();
+    $('#tbl_covid_cases_outside').DataTable({
+      order: [[ 1, 'asc' ]]
+    });
     //
     function show_covid_outside()
     {
