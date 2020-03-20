@@ -79,7 +79,7 @@
               <!-- Add icons to the links using the .nav-icon class
                   with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview menu-open">
-                <a href="index.html" class="nav-link active">
+                <a href="index.html" class="nav-link">
                   <i class="nav-icon fas fa-plus-square"></i>
                   <p>
                     Cases in the Philippines
@@ -87,7 +87,7 @@
                 </a>
               </li>
               <li class="nav-item has-treeview menu-open">
-                <a href="outside_ph.html" class="nav-link">
+                <a href="outside_ph.html" class="nav-link active">
                   <i class="nav-icon fas fa-plus-square"></i>
                   <p>
                     Cases Outside Philippines
@@ -127,42 +127,23 @@
         <!-- Main content -->
         <section class="content">
 
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-danger"><i class="far fa-address-card"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Total Cases</span>
-                  <span id="txt_total_cases" class="info-box-number"></span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-          </div>
-
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Cases in the Philippines</h3>
+              <h3 class="card-title">Confirmed cases of Filipino nationals outside the Philippines</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <div class="table-responsive">
-                <table id="tbl_covid_cases" class="table table-sm">
+                <table id="tbl_covid_cases_outside" class="table table-sm">
                   <thead>
                     <tr>
-                      <th style="width:10%;">Case #</th>
-                      <th style="width:10%;">Date</th>
-                      <th style="width:10%;">Age</th>
-                      <th style="width:10%;">Gender</th>
-                      <th style="width:10%;">Nationality</th>
-                      <th style="width:40%;">Hospital Admitted</th>
-                      <th style="width:10%;">Status</th>
+                      <th>Country #</th>
+                      <th>Confirmed</th>
+                      <th>Recovered</th>
+                      <th>Died</th>
                     </tr>
                   </thead>
-                  <tbody id="body_covid_cases">
+                  <tbody id="body_covid_cases_outside">
                   </tbody>
                 </table>
               </div>
@@ -284,6 +265,6 @@
   <!-- AdminLTE for demo purposes -->
   <script src="assets/dist/js/demo.js"></script>
   <!-- Custom website functions -->
-  <script src="assets/dist/js/event.handler.index.js"></script>
+  <script src="assets/dist/js/event.handler.outside.js"></script>
 </body>
 </html>
