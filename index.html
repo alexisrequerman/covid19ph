@@ -31,6 +31,12 @@
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <style>
+    table.dataTable tbody td {
+      vertical-align: middle;
+    }
+  </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -284,7 +290,7 @@
                 html +=
                   '<tr>' +
                     '<td>' +
-                      '<a href="javascript:void(0);" class="patient_info" data-case_no="'+data[i].case_no+'" data-date="'+data[i].date+'" data-age="'+data[i].age+'" data-gender="'+data[i].gender+'" data-nationality="'+data[i].nationality+'" data-hospital_admitted_to="'+data[i].hospital_admitted_to+'" data-had_recent_travel_history_abroad="'+data[i].had_recent_travel_history_abroad+'" data-resident_of="'+data[i].resident_of+'" data-status="'+data[i].status+'" data-other_information="'+data[i].other_information+'" data-source="'+data[i].source+'">' +
+                      '<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-block patient_info" data-case_no="'+data[i].case_no+'" data-date="'+data[i].date+'" data-age="'+data[i].age+'" data-gender="'+data[i].gender+'" data-nationality="'+data[i].nationality+'" data-hospital_admitted_to="'+data[i].hospital_admitted_to+'" data-had_recent_travel_history_abroad="'+data[i].had_recent_travel_history_abroad+'" data-resident_of="'+data[i].resident_of+'" data-status="'+data[i].status+'" data-other_information="'+data[i].other_information+'" data-source="'+data[i].source+'">' +
                         data[i].case_no +
                       '</a>' +
                     '</td>' +
