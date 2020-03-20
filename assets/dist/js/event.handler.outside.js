@@ -20,7 +20,7 @@ $(function () {
             html +=
               '<tr>' +
                 '<td>' +
-                  '<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-flat btn-block patient_info" data-country_territory_place="'+data[i].country_territory_place+'" data-confirmed="'+data[i].confirmed+'" data-recovered="'+data[i].recovered+'" data-died="'+data[i].died+'">' +
+                  '<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-flat btn-block country_info" data-country_territory_place="'+data[i].country_territory_place+'" data-confirmed="'+data[i].confirmed+'" data-recovered="'+data[i].recovered+'" data-died="'+data[i].died+'">' +
                     data[i].country_territory_place +
                   '</a>' +
                 '</td>' +
@@ -35,28 +35,42 @@ $(function () {
     }
 
     //
-    $('#body_covid_cases').on('click', '.patient_info', function() {
-      var data_case         = $(this).data('case_no');
-      var data_date         = $(this).data('date');
-      var data_age          = $(this).data('age');
-      var data_gender       = $(this).data('gender');
-      var data_nationality  = $(this).data('nationality');
-      var data_hospital     = $(this).data('hospital_admitted_to');
-      var data_travel       = $(this).data('had_recent_travel_history_abroad');
-      var data_status       = $(this).data('status');
-      var data_other        = $(this).data('other_information');
+    $('#body_covid_cases_outside').on('click', '.country_info', function() {
+      var data_country    = $(this).data('country_territory_place');
+      var data_confirmed  = $(this).data('confirmed');
+      var data_recovered  = $(this).data('recovered');
+      var data_died       = $(this).data('died');
 
-      $('#modal_case_info').modal('show');
+      $('#modal_country_info').modal('show');
 
-      $('#txt_case_no').text(data_case);
-      $('#txt_case_date').text(data_date);
-      $('#txt_case_age').text(data_age);
-      $('#txt_case_gender').text(data_gender);
-      $('#txt_case_nationality').text(data_nationality);
-      $('#txt_case_hospital').text(data_hospital);
-      $('#txt_case_travel').text(data_travel);
-      $('#txt_case_status').text(data_status);
-      $('#txt_case_other').text(data_other);
+      $('#txt_case_outside_country').text(data_country);
+      $('#txt_case_outside_confirmed').text(data_confirmed);
+      $('#txt_case_outside_recovered').text(data_recovered);
+      $('#txt_case_outside_died').text(data_died);
     });
+
+    //
+    show_total_confirmed();
+
+    //
+    function show_total_confirmed()
+    {
+      $.ajax({
+        type      : "GET",
+        url       : "https://coronavirus-ph-api.now.sh/cases-outside-ph",
+        async     : false,
+        dataType  : "JSON",
+        data      : {get_param: 'total'},
+        success   : function(data)
+        {
+          for (var i=0;i<data.length;++i)
+          {
+            $('#txt_total').text(data[i].confirmed);
+            $('#txt_total_recovered').text(data[i].recovered);
+            $('#txt_total_died').text(data[i].died);
+          }
+        }
+      });
+    }
 
 });

@@ -127,106 +127,118 @@
         <!-- Main content -->
         <section class="content">
 
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Confirmed cases of Filipino nationals outside the Philippines</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <div class="table-responsive">
-                <table id="tbl_covid_cases_outside" class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th>Country #</th>
-                      <th>Confirmed</th>
-                      <th>Recovered</th>
-                      <th>Died</th>
-                    </tr>
-                  </thead>
-                  <tbody id="body_covid_cases_outside">
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- /.card-body -->
-
-            <div class="modal fade" id="modal_case_info">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Patient Info</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Case #:</label>
-                            <span id="txt_case_no"></span>
-                          </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger"><i class="far fa-address-card"></i></span>
+        
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Confirmed</span>
+                            <span id="txt_total" class="info-box-number"></span>
                         </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Date:</label>
-                            <span id="txt_case_date"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Age:</label>
-                            <span id="txt_case_age"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Gender:</label>
-                            <span id="txt_case_gender"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Nationality:</label>
-                            <span id="txt_case_nationality"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Hospital Admitted To:</label>
-                            <span id="txt_case_hospital"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Recent Travel:</label>
-                            <span id="txt_case_travel"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Status:</label>
-                            <span id="txt_case_status"></span>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="text-secondary">Other Information:</label>
-                            <span id="txt_case_other"></span>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
                 </div>
-                <!-- /.modal-content -->
-              </div>
-              <!-- /.modal-dialog -->
+                <!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger"><i class="far fa-address-card"></i></span>
+      
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Recovered</span>
+                            <span id="txt_total_recovered" class="info-box-number"></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-danger"><i class="far fa-address-card"></i></span>
+      
+                        <div class="info-box-content">
+                            <span class="info-box-text">Total Died</span>
+                            <span id="txt_total_died" class="info-box-number"></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
             </div>
+
+            <div class="card">
+                <div class="card-header">
+                <h3 class="card-title">Confirmed cases of Filipino nationals outside the Philippines</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                <div class="table-responsive">
+                    <table id="tbl_covid_cases_outside" class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th>Country #</th>
+                        <th>Confirmed</th>
+                        <th>Recovered</th>
+                        <th>Died</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body_covid_cases_outside">
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="modal fade" id="modal_country_info">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Information</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="text-secondary">Country:</label>
+                                <span id="txt_case_outside_country"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="text-secondary">Confirmed:</label>
+                                <span id="txt_case_outside_confirmed"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="text-secondary">Recovered:</label>
+                                <span id="txt_case_outside_recovered"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="text-secondary">Died:</label>
+                                <span id="txt_case_outside_died"></span>
+                            </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+                </div>
             <!-- /.modal -->
 
           </div>
