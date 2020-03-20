@@ -162,58 +162,58 @@
                   <div class="modal-body">
                     <form>
                       <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-12">
                           <div class="form-group">
-                            <label for="">Case #</label>
-                            <input type="text" class="form-control" id="txt_case_no" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label for="">Date</label>
-                            <input type="text" class="form-control" id="txt_case_date" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label for="">Age</label>
-                            <input type="text" class="form-control" id="txt_case_age" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label for="">Gender</label>
-                            <input type="text" class="form-control" id="txt_case_gender" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <label for="">Nationality</label>
-                            <input type="text" class="form-control" id="txt_case_nationality" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-8">
-                          <div class="form-group">
-                            <label for="">Hospital Admitted To</label>
-                            <input type="text" class="form-control" id="txt_case_hospital" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label for="">Recent Travel</label>
-                            <input type="text" class="form-control" id="txt_case_travel" disabled>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label for="">Status</label>
-                            <input type="text" class="form-control" id="txt_case_status" disabled>
+                            <label class="text-secondary">Case #:</label>
+                            <span id="txt_case_no"></span>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <label for="">Other Information</label>
-                            <textarea id="txt_case_other" class="form-control" rows="5" disabled></textarea>
+                            <label class="text-secondary">Date:</label>
+                            <span id="txt_case_date"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="text-secondary">Age:</label>
+                            <span id="txt_case_age"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="text-secondary">Gender:</label>
+                            <span id="txt_case_gender"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="text-secondary">Nationality:</label>
+                            <span id="txt_case_nationality"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="text-secondary">Hospital Admitted To:</label>
+                            <span id="txt_case_hospital"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="text-secondary">Recent Travel:</label>
+                            <span id="txt_case_travel"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="text-secondary">Status:</label>
+                            <span id="txt_case_status"></span>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="text-secondary">Other Information:</label>
+                            <span id="txt_case_other"></span>
                           </div>
                         </div>
                       </div>
@@ -290,7 +290,7 @@
                 html +=
                   '<tr>' +
                     '<td>' +
-                      '<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-block patient_info" data-case_no="'+data[i].case_no+'" data-date="'+data[i].date+'" data-age="'+data[i].age+'" data-gender="'+data[i].gender+'" data-nationality="'+data[i].nationality+'" data-hospital_admitted_to="'+data[i].hospital_admitted_to+'" data-had_recent_travel_history_abroad="'+data[i].had_recent_travel_history_abroad+'" data-resident_of="'+data[i].resident_of+'" data-status="'+data[i].status+'" data-other_information="'+data[i].other_information+'" data-source="'+data[i].source+'">' +
+                      '<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-flat btn-block patient_info" data-case_no="'+data[i].case_no+'" data-date="'+data[i].date+'" data-age="'+data[i].age+'" data-gender="'+data[i].gender+'" data-nationality="'+data[i].nationality+'" data-hospital_admitted_to="'+data[i].hospital_admitted_to+'" data-had_recent_travel_history_abroad="'+data[i].had_recent_travel_history_abroad+'" data-resident_of="'+data[i].resident_of+'" data-status="'+data[i].status+'" data-other_information="'+data[i].other_information+'" data-source="'+data[i].source+'">' +
                         data[i].case_no +
                       '</a>' +
                     '</td>' +
@@ -327,15 +327,15 @@
 
           $('#modal_case_info').modal('show');
 
-          $('#txt_case_no').val(data_case);
-          $('#txt_case_date').val(data_date);
-          $('#txt_case_age').val(data_age);
-          $('#txt_case_gender').val(data_gender);
-          $('#txt_case_nationality').val(data_nationality);
-          $('#txt_case_hospital').val(data_hospital);
-          $('#txt_case_travel').val(data_travel);
-          $('#txt_case_status').val(data_status);
-          $('#txt_case_other').val(data_other);
+          $('#txt_case_no').text(data_case);
+          $('#txt_case_date').text(data_date);
+          $('#txt_case_age').text(data_age);
+          $('#txt_case_gender').text(data_gender);
+          $('#txt_case_nationality').text(data_nationality);
+          $('#txt_case_hospital').text(data_hospital);
+          $('#txt_case_travel').text(data_travel);
+          $('#txt_case_status').text(data_status);
+          $('#txt_case_other').text(data_other);
         });
 
       });
