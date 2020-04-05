@@ -22,7 +22,7 @@ $(function () {
             html +=
               '<tr>' +
                 '<td>' +
-                  '<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-flat btn-block patient_info" data-case_no="'+data[i].case_no+'" data-date="'+data[i].date+'" data-age="'+data[i].age+'" data-gender="'+data[i].gender+'" data-nationality="'+data[i].nationality+'" data-hospital_admitted_to="'+data[i].hospital_admitted_to+'" data-had_recent_travel_history_abroad="'+data[i].had_recent_travel_history_abroad+'" data-resident_of="'+data[i].resident_of+'" data-status="'+data[i].status+'" data-other_information="'+data[i].other_information+'" data-source="'+data[i].source+'">' +
+                  '<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-flat btn-block patient_info" data-case_no="'+data[i].case_no+'" data-date="'+data[i].date+'" data-age="'+data[i].age+'" data-gender="'+data[i].gender+'" data-nationality="'+data[i].nationality+'" data-hospital_admitted_to="'+data[i].hospital_admitted_to+'" data-travel_history="'+data[i].travel_history+'" data-resident_of="'+data[i].resident_of+'" data-status="'+data[i].status+'" data-latitude="'+data[i].latitude+'" data-longitude="'+data[i].longitude+'">' +
                     data[i].case_no +
                   '</a>' +
                 '</td>' +
@@ -53,9 +53,9 @@ $(function () {
       var data_gender       = $(this).data('gender');
       var data_nationality  = $(this).data('nationality');
       var data_hospital     = $(this).data('hospital_admitted_to');
-      var data_travel       = $(this).data('had_recent_travel_history_abroad');
-      var data_status       = $(this).data('status');
-      var data_other        = $(this).data('other_information');
+      var data_travel       = $(this).data('travel_history');
+      var data_latitude     = $(this).data('latitude');
+      var data_longitude    = $(this).data('longitude');
 
       $('#modal_case_info').modal('show');
 
@@ -67,7 +67,8 @@ $(function () {
       $('#txt_case_hospital').text(data_hospital);
       $('#txt_case_travel').text(data_travel);
       $('#txt_case_status').text(data_status);
-      $('#txt_case_other').text(data_other);
+      $('#txt_case_latitude').text(data_latitude);
+      $('#txt_case_longtitude').text(data_longitude);
     });
 
 });
