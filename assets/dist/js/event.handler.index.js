@@ -36,10 +36,12 @@ $(function () {
           }
           $('#body_covid_cases').html(html);
 
+          /*
           if(data){
             var total = data.length;
             $('#txt_total_cases').text(total);
           }
+          */
 
         }
       });
@@ -72,13 +74,11 @@ $(function () {
       $('#txt_case_longtitude').text(data_longitude);
     });
 
+    //
     test_results();
-
+    //
     function test_results()
     {
-      //let test_json = 'https://coronavirus-ph-api.herokuapp.com/test-results';
-      //let result = JSON.parse(test_json);
-      //console.log(result.confirmed_cases + ", " + result.cases_tested_negative + ", " + result.cases_pending_test_results);
       $.ajax({
         type      : "GET",
         url       : "https://coronavirus-ph-api.herokuapp.com/test-results",
@@ -86,7 +86,10 @@ $(function () {
         dataType  : "JSON",
         success   : function(data)
         {
-          console.log(data.confirmed_cases + ", " + data.cases_tested_negative + ", " + data.cases_pending_test_results);
+          //console.log(data.confirmed_cases + ", " + data.cases_tested_negative + ", " + data.cases_pending_test_results);
+          $('#txt_total_cases').text(data.confirmed_cases);
+          $('#txt_total_negative').text(data.cases_tested_negative);
+          $('#txt_total_pending').text(data.cases_pending_test_results);
         }
       });
     }
