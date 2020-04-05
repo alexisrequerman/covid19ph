@@ -73,12 +73,22 @@ $(function () {
     });
 
     test_results();
-    
+
     function test_results()
     {
-      let test_json = "https://coronavirus-ph-api.herokuapp.com/test-results";
-      let result = JSON.parse(test_json);
-      console.log(result.confirmed_cases + ", " + result.cases_tested_negative + ", " + result.cases_pending_test_results);
+      //let test_json = 'https://coronavirus-ph-api.herokuapp.com/test-results';
+      //let result = JSON.parse(test_json);
+      //console.log(result.confirmed_cases + ", " + result.cases_tested_negative + ", " + result.cases_pending_test_results);
+      $.ajax({
+        type      : "GET",
+        url       : "https://coronavirus-ph-api.herokuapp.com/test-results",
+        async     : false,
+        dataType  : "JSON",
+        success   : function(data)
+        {
+          console.log(data.confirmed_cases + ", " + data.cases_tested_negative + ", " + data.cases_pending_test_results);
+        }
+      });
     }
 
 });
