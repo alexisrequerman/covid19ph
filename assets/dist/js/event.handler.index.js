@@ -10,7 +10,7 @@ $(function () {
     {
       $.ajax({
         type      : "GET",
-        url       : "https://coronavirus-ph-api.now.sh/cases",
+        url       : "https://coronavirus-ph-api.herokuapp.com/cases",
         async     : false,
         dataType  : "JSON",
         success   : function(data)
