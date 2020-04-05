@@ -72,4 +72,13 @@ $(function () {
       $('#txt_case_longtitude').text(data_longitude);
     });
 
+    test_results();
+    
+    function test_results()
+    {
+      let test_json = "https://coronavirus-ph-api.herokuapp.com/test-results";
+      let result = JSON.parse(test_json);
+      console.log(result.confirmed_cases + ", " + result.cases_tested_negative + ", " + result.cases_pending_test_results);
+    }
+
 });
