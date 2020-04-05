@@ -74,9 +74,9 @@ $(function () {
       $('#txt_case_longtitude').text(data_longitude);
     });
 
-    //
+    // display results
     test_results();
-    //
+    // function test results
     function test_results()
     {
       $.ajax({
