@@ -54,6 +54,7 @@ $(function () {
       var data_nationality  = $(this).data('nationality');
       var data_hospital     = $(this).data('hospital_admitted_to');
       var data_travel       = $(this).data('travel_history');
+      var data_status       = $(this).data('status');
       var data_latitude     = $(this).data('latitude');
       var data_longitude    = $(this).data('longitude');
 
